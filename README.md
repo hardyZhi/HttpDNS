@@ -1,6 +1,6 @@
 整体逻辑:  
 
-1.启动APP去判断本应用使用的各域名是否被DNS劫持。 
+1.启动APP去判断本应用使用的各域名是否被DNS劫持。   
 2.正常情况下没被劫持的话继续用域名访问接口和WebView。 
 3.如果被劫持了则使用阿里云HttpDNS服务SDK获取该域名未被劫持的正确IP存在本地。 
 4.注册一个全局的NSURLProtocol去拦截所有接口request和UIWebView的request。 
