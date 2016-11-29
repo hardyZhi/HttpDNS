@@ -1,8 +1,12 @@
 整体逻辑：
 1.启动APP去判断本应用使用的各域名是否被DNS劫持。
+
 2.正常情况下没被劫持的话继续用域名访问接口和WebView。
+
 3.如果被劫持了则使用阿里云HttpDNS服务SDK获取该域名未被劫持的正确IP存在本地。
+
 4.注册一个全局的NSURLProtocol去拦截所有接口request和UIWebView的request。
+
 5.在自定义的NSURLProtocol中把所有的request都替换成IP形式的请求来绕过DNS域名解析的过程。（例如https://jifen.2345.com/api/getRealIP.php替换成https://115.231.185.111/api/getRealIP.php）
 
 
