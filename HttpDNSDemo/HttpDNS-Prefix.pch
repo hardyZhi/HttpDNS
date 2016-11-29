@@ -1,0 +1,24 @@
+//
+//  HttpDNS-Prefix.pch
+//  HttpDNSDemo
+//
+//  Created by ZhiLi on 2016/11/24.
+//  Copyright © 2016年 ZhiLi. All rights reserved.
+//
+
+#ifndef HttpDNS_Prefix_pch
+#define HttpDNS_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "DataCenter.h"
+
+#define DEFINE_STR(name, value) static NSString *const name = value;
+#define DATA_STRING(property)               ([(property) isKindOfClass:[NSString class]] && [property length] > 0)
+
+#pragma mark - 获取真实IP
+DEFINE_STR(kServerIPAddressListBaseUrl, @"https://jifen.2345.com/api/")//base域名
+DEFINE_STR(kGetRealIPPath, @"getRealIP.php")//获取真实的IP地址
+DEFINE_STR(kLocalIPAddressModel, @"IPAddressModel")//沙盒存储该域名本地IP地址
+
+#endif /* HttpDNS_Prefix_pch */
